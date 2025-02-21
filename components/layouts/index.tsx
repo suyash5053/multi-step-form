@@ -6,9 +6,14 @@ const Layout = ({
     children: React.ReactNode;
   }) => {
     return (
-        <div className="h-auto w-2/3 rounded-2xl bg-white shadow-lg p-4 flex">
-            <Sidebar />
-            {children}
+        <div className="h-2/3 w-3/5 rounded-2xl bg-white shadow-lg flex p-4">
+            <div className="flex h-full w-full rounded-2xl">
+                <Sidebar /> 
+                <div className="w-2/3">
+                  {children}
+                </div>
+                
+            </div>
         </div>
     )
 }
