@@ -6,6 +6,7 @@ import Plans from "../components/plan";
 import AddOns from "../components/add-ons";
 import FinishingUp from "../components/finishing-up";
 import { useEffect } from "react";
+import ThankYou from "@/components/thank-you";
 
 const PageRenderer = () => {
   const { currentStep, resetCurrentStep } = useGlobal();
@@ -20,6 +21,7 @@ const PageRenderer = () => {
       {currentStep === 2 && <Plans />}
       {currentStep === 3 && <AddOns />}
       {currentStep === 4 && <FinishingUp />}
+      {currentStep === 5 && <ThankYou />}
     </>
   );
 };

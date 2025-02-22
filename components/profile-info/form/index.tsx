@@ -7,14 +7,17 @@ import { Form } from "@/components/ui/form";
 import TextInput from "./text-input";
 import { Button } from "@/components/ui/button";
 import { ProfileInfoFormValues } from "@/lib/types/form";
+import { useGlobal } from "@/zustand/global";
 
 const ProfileInfoForm = () => {
+  const { currentStep, setCurrentStep } = useGlobal();
   const form = useForm<ProfileInfoFormValues>({
     resolver: zodResolver(profileInfoSchema),
   });
 
   const onSubmit = (data: ProfileInfoFormValues) => {
     console.log(data);
+    setCurrentStep(currentStep + 1);
   };
 
   return (
