@@ -17,7 +17,9 @@ const AddOnItems = () => {
               <p className="text-sm">{addOn.description}</p>
             </div>
           </div>
-          <p className="text-sm">{isYearly ? addOn.price.yearly : addOn.price.monthly}</p>
+          <p className="text-sm">
+            {isYearly ? `+$${addOn.price.yearly}/yr` : `+$${addOn.price.monthly}/mo`}
+          </p>
         </div>
       ))}
     </div>

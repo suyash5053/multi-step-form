@@ -2,19 +2,19 @@ export const plans = [
   {
     icon: "/svgs/icon-arcade.svg",
     title: "Arcade",
-    price: { monthly: "$9/mo", yearly: "$90/yr" },
+    price: { monthly: "9", yearly: "90" },
     yearlyToast: "2 months free",
   },
   {
     icon: "/svgs/icon-advanced.svg",
     title: "Advacned",
-    price: { monthly: "$12/mo", yearly: "$120/yr" },
+    price: { monthly: "12", yearly: "120" },
     yearlyToast: "2 months free",
   },
   {
     icon: "/svgs/icon-pro.svg",
     title: "Pro",
-    price: { monthly: "$15/mo", yearly: "$150/yr" },
+    price: { monthly: "15", yearly: "150" },
     yearlyToast: "2 months free",
   },
 ];

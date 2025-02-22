@@ -18,7 +18,7 @@ const PlanCards = () => {
             <div className="flex flex-col gap-1">
               <h1 className="font-bold text-base leading-none">{plan.title}</h1>
               <p className="text-sm text-coolGray">
-                {isYearly ? plan.price.yearly : plan.price.monthly}
+                {isYearly ? `$${plan.price.yearly}/yr` : `$${plan.price.monthly}/mo`}
               </p>
               {isYearly && (
                 <p className="text-xs text-marineBlue font-normal">{plan.yearlyToast}</p>
