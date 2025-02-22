@@ -1,13 +1,13 @@
 "use client";
 
 import { useGlobal } from "@/zustand/global";
-import ProfileInformation from "./profile-info";
-import Plans from "./plan";
-import AddOns from "./add-ons";
-import FinishingUp from "./finishing-up";
+import ProfileInformation from "../components/profile-info";
+import Plans from "../components/plan";
+import AddOns from "../components/add-ons";
+import FinishingUp from "../components/finishing-up";
 import { useEffect } from "react";
 
-const PageRenderLogic = () => {
+const PageRenderer = () => {
   const { currentStep, resetCurrentStep } = useGlobal();
 
   useEffect(() => {
@@ -24,4 +24,4 @@ const PageRenderLogic = () => {
   );
 };
 
-export default PageRenderLogic;
+export default PageRenderer;
