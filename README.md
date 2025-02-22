@@ -2,4 +2,4 @@
 
 ## Technologies Used
 
-React, Tailwind, Next
+React, Tailwind, Next, Shadcn, Zustand
