@@ -26,7 +26,10 @@ const Summary = () => {
             <p className="text-marineBlue font-bold">
               {selectedPlan?.title} {isYearly ? "(Yearly)" : "(Monthly)"}
             </p>
-            <p className="hover:underline text-sm text-coolGray font-normal" onClick={handleClick}>
+            <p
+              className="hover:underline text-sm text-coolGray md:font-normal font-medium"
+              onClick={handleClick}
+            >
               Change
             </p>
           </div>
@@ -38,8 +41,8 @@ const Summary = () => {
         <div className="flex flex-col gap-4 h-auto">
           {selectedAddOnDetails.map((addon) => (
             <div key={addon.id} className="flex justify-between w-full">
-              <p className="text-coolGray text-sm">{addon.name}</p>
-              <p className="text-marineBlue font-medium text-sm">
+              <p className="text-coolGray text-sm md:font-normal font-medium">{addon.name}</p>
+              <p className="text-marineBlue md:font-normal font-medium text-sm">
                 +${addon.price[isYearly ? "yearly" : "monthly"]}/{isYearly ? "yr" : "mo"}
               </p>
             </div>
@@ -47,7 +50,7 @@ const Summary = () => {
         </div>
       </div>
       <div className="flex justify-between items-center w-full p-4">
-        <p className="text-coolGray font-normal text-sm">
+        <p className="text-coolGray md:font-normal font-medium text-sm">
           Total {isYearly ? "(per year)" : "(per month)"}
         </p>
         <p className="text-purplishBlue font-bold text-lg">

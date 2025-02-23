@@ -10,7 +10,9 @@ const FinishingUp = () => {
         description="Double-check everything looks OK before confirming."
       />
       <Summary />
-      <Footer />
+      <div className="md:block hidden">
+        <Footer />
+      </div>
     </div>
   );
 };
