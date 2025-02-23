@@ -11,17 +11,17 @@ interface TextInputProps {
   className?: string;
 }
 
-const TextInput = ({ form, name, label, placeholder, className }: TextInputProps) =>{
+const TextInput = ({ form, name, label, placeholder, className }: TextInputProps) => {
   return (
     <FormField
       control={form.control}
       name={name}
       render={({ field }) => (
         <FormItem className={className}>
-          <div className="flex items-center justify-between">
-          <FormLabel className="font-medium">{label}</FormLabel>
-          <FormMessage className="font-bold"/>
-          </div>        
+          <div className="flex items-center justify-between h-4">
+            <FormLabel className="font-medium">{label}</FormLabel>
+            <FormMessage className="font-bold" />
+          </div>
           <FormControl>
             <Input
               placeholder={placeholder}
@@ -34,7 +34,6 @@ const TextInput = ({ form, name, label, placeholder, className }: TextInputProps
       )}
     />
   );
-}
-
+};
 
 export default TextInput;

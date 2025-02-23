@@ -5,8 +5,8 @@ import Layout from "@/components/layouts";
 
 const ubuntu = Ubuntu({
   weight: ["400", "500", "700"],
-  preload: false,
-}) 
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Multi Step Form",
@@ -21,11 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ubuntu} antialiased text-base bg-magnolia h-screen w-screen flex flex-col items-center justify-center`}
+        className={`${ubuntu} antialiased text-base bg-magnolia h-screen w-full flex flex-col items-center justify-center`}
       >
-        <Layout>
-        {children}
-        </Layout>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );

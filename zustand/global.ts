@@ -7,6 +7,10 @@ interface GlobalState {
   resetCurrentStep: () => void;
   isYearly: boolean;
   setIsYearly: (isYearly: boolean) => void;
+  currentPlan: number;
+  setCurrenPlan: (newCurrentPlan: number) => void;
+  selectedAddOns: number[];
+  toggleAddOn: (addOnId: number) => void;
 }
 
 export const useGlobal = create<GlobalState>()(
@@ -18,6 +22,17 @@ export const useGlobal = create<GlobalState>()(
       resetCurrentStep: () => set((state) => ({ ...state, currentStep: 1 })),
       isYearly: false,
       setIsYearly: (isYearly: boolean) => set((state) => ({ ...state, isYearly })),
+      currentPlan: 1,
+      setCurrenPlan: (newCurrentPlan: number) =>
+        set((state) => ({ ...state, currentPlan: newCurrentPlan })),
+      selectedAddOns: [],
+      toggleAddOn: (addOnId: number) =>
+        set((state) => ({
+          ...state,
+          selectedAddOns: state.selectedAddOns.includes(addOnId)
+            ? state.selectedAddOns.filter((id) => id !== addOnId)
+            : [...state.selectedAddOns, addOnId],
+        })),
     }),
     {
       name: "global-storage",

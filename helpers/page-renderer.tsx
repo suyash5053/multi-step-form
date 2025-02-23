@@ -1,11 +1,11 @@
 "use client";
 
+import { useEffect } from "react";
 import { useGlobal } from "@/zustand/global";
 import ProfileInformation from "../components/profile-info";
 import Plans from "../components/plan";
 import AddOns from "../components/add-ons";
 import FinishingUp from "../components/finishing-up";
-import { useEffect } from "react";
 import ThankYou from "@/components/thank-you";
 
 const PageRenderer = () => {
