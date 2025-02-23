@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ubuntu} antialiased text-base bg-magnolia h-screen w-full flex flex-col items-center justify-center`}
+        className={`${ubuntu} antialiased text-base bg-magnolia h-screen w-full flex flex-col md:items-center md:justify-center`}
       >
         <Layout>{children}</Layout>
       </body>

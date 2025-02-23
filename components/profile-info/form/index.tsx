@@ -8,6 +8,7 @@ import { Form } from "@/components/ui/form";
 import TextInput from "./text-input";
 import { ProfileInfoFormValues } from "@/lib/types/form";
 import { useGlobal } from "@/zustand/global";
+import { Button } from "@/components/ui/button";
 
 const ProfileInfoForm = () => {
   const { currentStep, setCurrentStep, setForm } = useGlobal();
@@ -15,7 +16,9 @@ const ProfileInfoForm = () => {
     resolver: zodResolver(profileInfoSchema),
   });
 
-  useEffect(() => {setForm(form)}, [form, setForm])
+  useEffect(() => {
+    setForm(form);
+  }, [form, setForm]);
 
   const onSubmit = (data: ProfileInfoFormValues) => {
     console.log(data);
@@ -51,6 +54,15 @@ const ProfileInfoForm = () => {
             className="space-y-1"
           />
         </form>
+        <div className="md:flex w-full justify-end items-end absolute hidden mt-6">
+          <Button
+            type="submit"
+            className="w-1/4 h-12 bg-marineBlue hover:bg-marineBlue/85 rounded-lg"
+            onClick={form.handleSubmit(onSubmit)}
+          >
+            Next Step
+          </Button>
+        </div>
       </Form>
     </>
   );

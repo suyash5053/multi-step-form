@@ -5,11 +5,11 @@ import { Button } from "../ui/button";
 
 const Footer = () => {
   const { currentStep, setCurrentStep, form } = useGlobal();
-  
+
   const handleNext = async (e: React.MouseEvent) => {
-    if(currentStep ===1 ) {
+    if (currentStep === 1) {
       const result = await form.trigger();
-      if(!result) return;
+      if (!result) return;
     }
     e.preventDefault();
     setCurrentStep(currentStep + 1);
@@ -27,7 +27,7 @@ const Footer = () => {
         <Button
           variant={"link"}
           type="button"
-          className="w-1/4 h-12 text-marineBlue hover:no-underline items-center justify-start p-0 font-medium"
+          className="w-1/4 h-12 text-marineBlue hover:no-underline items-center justify-start md:p-0 px-4 font-medium"
           onClick={handleBack}
         >
           Go Back
@@ -36,7 +36,7 @@ const Footer = () => {
       {currentStep === 1 && <div className="w-1/4" />}
       <Button
         type="button"
-        className={`w-1/4 h-12 rounded-lg ${
+        className={`w-1/4 h-12 md:rounded-lg rounded-sm ${
           currentStep === 4
             ? "bg-purplishBlue hover:bg-purplishBlue/85"
             : "bg-marineBlue hover:bg-marineBlue/85"
