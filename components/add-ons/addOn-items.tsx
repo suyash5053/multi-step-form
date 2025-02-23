@@ -8,7 +8,7 @@ const AddOnItems = () => {
   const { isYearly, selectedAddOns, toggleAddOn } = useGlobal();
 
   return (
-    <div className="h-full pt-6 relative gap-6 flex flex-col">
+    <div className="h-full md:pt-6 relative md:gap-6 gap-3 flex flex-col">
       {addOns.map((addOn) => {
         const isSelected = selectedAddOns.includes(addOn.id);
 
@@ -20,18 +20,22 @@ const AddOnItems = () => {
             }`}
             onClick={() => toggleAddOn(addOn.id)}
           >
-            <div className="flex items-center gap-5">
+            <div className="flex items-center md:gap-5 gap-3">
               <Checkbox
                 checked={isSelected}
                 onCheckedChange={() => toggleAddOn(addOn.id)}
                 className="data-[state=checked]:bg-purplishBlue p-1 flex items-center justify-center text-xs font-bold"
               />
-              <div className="flex flex-col gap-0">
-                <p className="font-bold text-base text-marineBlue">{addOn.name}</p>
-                <p className="text-sm text-coolGray">{addOn.description}</p>
+              <div className="flex flex-col">
+                <p className="font-bold md:text-base text-sm md:font-normal text-marineBlue">
+                  {addOn.name}
+                </p>
+                <p className="md:text-sm text-xs font-medium md:font-normal text-coolGray">
+                  {addOn.description}
+                </p>
               </div>
             </div>
-            <p className="text-sm text-purplishBlue font-medium">
+            <p className="md:text-sm text-xs text-purplishBlue font-medium">
               {isYearly ? `+$${addOn.price.yearly}/yr` : `+$${addOn.price.monthly}/mo`}
             </p>
           </div>

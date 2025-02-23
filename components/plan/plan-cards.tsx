@@ -11,16 +11,16 @@ const PlanCards = () => {
   };
 
   return (
-    <div className="flex w-full h-1/2 gap-4">
+    <div className="flex flex-col md:flex-row w-full h-1/2 gap-4">
       {plans.map((plan) => (
         <div
           key={plan.id}
-          className={`flex flex-col gap-4 w-1/3 h-full border rounded-md p-3 items-start hover:border-purplishBlue ${
+          className={`flex md:flex-col gap-4 w-full md:w-1/3 h-full border rounded-md p-3 items-start hover:border-purplishBlue ${
             currentPlan === plan.id ? "border-purplishBlue bg-pastelBlue/10" : "border-lightGray"
           }`}
           onClick={() => handleClick(plan.id)}
         >
-          <div className="flex flex-col justify-between h-full">
+          <div className="flex md:flex-col justify-between h-full gap-4 md:gap-0">
             <Image src={plan.icon} alt={plan.title} width={40} height={40} />
             <div className="flex flex-col gap-1">
               <p className="font-bold text-base leading-none">{plan.title}</p>

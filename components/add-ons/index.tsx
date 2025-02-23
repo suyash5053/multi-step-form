@@ -10,7 +10,9 @@ const AddOns = () => {
         description="Add-ons help enhance your gaming experience."
       />
       <AddOnItems />
-      <Footer />
+      <div className="md:block hidden">
+        <Footer />
+      </div>
     </div>
   );
 };

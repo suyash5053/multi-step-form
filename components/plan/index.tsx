@@ -10,11 +10,13 @@ const Plans = () => {
         title="Select your plan"
         description="You have the option of monthly or yearly billing."
       />
-      <div className="h-full pt-6 relative gap-8 flex flex-col">
+      <div className="h-full md:pt-6 relative gap-8 flex flex-col justify-between md:justify-normal">
         <PlanCards />
         <TogglePlan />
       </div>
-      <Footer />
+      <div className="md:block hidden">
+        <Footer />
+      </div>
     </div>
   );
 };
