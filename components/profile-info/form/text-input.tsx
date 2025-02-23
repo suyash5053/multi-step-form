@@ -12,6 +12,7 @@ interface TextInputProps {
 }
 
 const TextInput = ({ form, name, label, placeholder, className }: TextInputProps) => {
+  const error = form.formState.errors[name];
   return (
     <FormField
       control={form.control}
@@ -19,15 +20,15 @@ const TextInput = ({ form, name, label, placeholder, className }: TextInputProps
       render={({ field }) => (
         <FormItem className={className}>
           <div className="flex items-center justify-between h-4">
-            <FormLabel className="font-medium">{label}</FormLabel>
-            <FormMessage className="font-bold" />
+            <FormLabel className="font-medium text-marineBlue">{label}</FormLabel>
+            <FormMessage className="font-bold text-strawberryRed" />
           </div>
           <FormControl>
             <Input
               placeholder={placeholder}
               {...field}
               value={typeof field.value === "string" ? field.value : ""}
-              className="h-12"
+              className={`h-12 ${error ? " focus-visible:ring-strawberryRed" : ""}`}
             />
           </FormControl>
         </FormItem>

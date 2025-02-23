@@ -27,9 +27,7 @@ const AddOnItems = () => {
                 className="data-[state=checked]:bg-purplishBlue p-1 flex items-center justify-center text-xs font-bold"
               />
               <div className="flex flex-col">
-                <p className="font-bold md:text-base text-sm md:font-normal text-marineBlue">
-                  {addOn.name}
-                </p>
+                <p className="font-bold md:text-base text-sm text-marineBlue">{addOn.name}</p>
                 <p className="md:text-sm text-xs font-medium md:font-normal text-coolGray">
                   {addOn.description}
                 </p>
