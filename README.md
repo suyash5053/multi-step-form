@@ -23,3 +23,6 @@ For the base layout I wasn't thinking to hard code the screen sizes but since it
 ## Why Zustand Store Management
 
 Instead of Managing multiple states with parent or child and using lots of useState hooks, I have used a global store from Zustand, why not Redux?, cause it is smaller and faster than Redux.
+
+## PS
+If you get some minor errors, please let me know.
