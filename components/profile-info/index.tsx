@@ -1,5 +1,6 @@
 import BaseRenderer from "@/helpers/base-renderer";
 import ProfileInfoForm from "./form";
+import Footer from "../layouts/footer";
 
 const ProfileInformation = () => {
   return (
@@ -8,6 +9,7 @@ const ProfileInformation = () => {
       <div className="h-full pt-6 relative">
         <ProfileInfoForm />
       </div>
+      <Footer />
     </div>
   );
 };

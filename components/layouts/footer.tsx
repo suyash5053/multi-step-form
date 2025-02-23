@@ -4,8 +4,13 @@ import { useGlobal } from "@/zustand/global";
 import { Button } from "../ui/button";
 
 const Footer = () => {
-  const { currentStep, setCurrentStep } = useGlobal();
-  const handleNext = (e: React.MouseEvent) => {
+  const { currentStep, setCurrentStep, form } = useGlobal();
+  
+  const handleNext = async (e: React.MouseEvent) => {
+    if(currentStep ===1 ) {
+      const result = await form.trigger();
+      if(!result) return;
+    }
     e.preventDefault();
     setCurrentStep(currentStep + 1);
   };
@@ -28,10 +33,10 @@ const Footer = () => {
           Go Back
         </Button>
       )}
-      {currentStep === 1 && <div className="w-1/4" />} {/* Spacer when on first step */}
+      {currentStep === 1 && <div className="w-1/4" />}
       <Button
         type="button"
-        className={`w-1/4 h-12  rounded-lg ${
+        className={`w-1/4 h-12 rounded-lg ${
           currentStep === 4
             ? "bg-purplishBlue hover:bg-purplishBlue/85"
             : "bg-marineBlue hover:bg-marineBlue/85"

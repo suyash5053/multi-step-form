@@ -11,6 +11,8 @@ interface GlobalState {
   setCurrenPlan: (newCurrentPlan: number) => void;
   selectedAddOns: number[];
   toggleAddOn: (addOnId: number) => void;
+  form: any;
+  setForm: (form: any) => void;
 }
 
 export const useGlobal = create<GlobalState>()(
@@ -33,6 +35,8 @@ export const useGlobal = create<GlobalState>()(
             ? state.selectedAddOns.filter((id) => id !== addOnId)
             : [...state.selectedAddOns, addOnId],
         })),
+      form: null,
+      setForm: (form) => set((state) => ({ ...state, form })),
     }),
     {
       name: "global-storage",
